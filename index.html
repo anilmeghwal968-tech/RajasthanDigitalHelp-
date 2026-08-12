@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rajasthan Digital Help | Latest Government Jobs</title>
+<meta name="description" content="Rajasthan Digital Help पर राजस्थान और भारत की सरकारी भर्तियों, ऑनलाइन फॉर्म, एडमिट कार्ड और रिजल्ट की जानकारी।">
+<link rel="canonical" href="https://example.com/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}header{background:#0b1f3a;color:#fff;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:3}.logo{font-weight:900;font-size:22px;color:#ff7a18}.logo b{color:#fff}.nav a{margin-left:18px;color:#fff;font-size:14px}.hero{padding:55px 5%;background:linear-gradient(135deg,#0b1f3a,#1b5b87);color:#fff}.hero h1{font-size:40px;margin:0 0 12px}.hero p{max-width:750px;line-height:1.6}.search{display:flex;max-width:720px}.search input{flex:1;padding:14px;border:0;border-radius:8px 0 0 8px}.search button,.btn{background:#ff7a18;color:#fff;border:0;padding:12px 17px;border-radius:0 8px 8px 0;font-weight:700}.wrap{width:90%;max-width:1200px;margin:32px auto}.bar{display:flex;justify-content:space-between;align-items:center}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;padding:20px;border-radius:14px;box-shadow:0 4px 18px #0001}.tag{font-size:12px;background:#e7f6ed;color:#16733f;padding:5px 8px;border-radius:20px}.card h3{line-height:1.4}.meta{color:#667085;font-size:13px;line-height:1.8}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.links a{padding:9px 11px;border-radius:7px;background:#0b1f3a;color:#fff;font-size:12px}.links a.apply{background:#16834b}.admin{background:#fff;padding:22px;border-radius:14px}.admin input,.admin select{width:100%;padding:11px;margin:5px 0 10px;border:1px solid #d9e0ea;border-radius:7px}.admin button{padding:11px 15px;border:0;border-radius:7px;background:#0b1f3a;color:#fff}.footer{margin-top:50px;padding:35px 5%;background:#0b1f3a;color:#fff}@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.nav{display:none}.hero h1{font-size:30px}}@media(max-width:520px){.grid{grid-template-columns:1fr}.hero h1{font-size:27px}}
+</style>
+</head>
+<body>
+<header><div class="logo">Rajasthan <b>Digital Help</b></div><nav class="nav"><a href="#jobs">Jobs</a><a href="#admin">Admin</a><a href="#about">About</a></nav></header>
+<section class="hero"><h1>सभी सरकारी भर्तियों की जानकारी — एक जगह</h1><p>Latest Jobs, Official Notification, Apply Online, Admit Card और Result अपडेट।</p><div class="search"><input id="q" placeholder="SSC, Railway, Police, Nursing..."><button onclick="searchJobs()">Search</button></div></section>
+<main class="wrap">
+<section id="jobs"><div class="bar"><h2>🔥 Latest Government Jobs</h2><span id="count"></span></div><div class="grid" id="grid"></div></section>
+<section id="admin" style="margin-top:45px"><h2>🔐 Admin Panel — Demo</h2><div class="admin">
+<p><b>Version 2 demo:</b> नीचे से भर्ती जोड़ें। वास्तविक multi-user login/database के लिए backend deployment आवश्यक है।</p>
+<input id="title" placeholder="Recruitment title"><input id="category" placeholder="Category">
+<input id="posts" placeholder="Total posts"><input id="last" placeholder="Last date">
+<input id="notice" placeholder="Official Notification URL"><input id="apply" placeholder="Official Apply URL">
+<button onclick="addJob()">Publish Recruitment</button>
+</div></section>
+<section id="about" style="margin-top:40px"><h2>About Rajasthan Digital Help</h2><p>सरकारी नौकरी, ऑनलाइन फॉर्म, एडमिट कार्ड और रिजल्ट की जानकारी सरल हिंदी में उपलब्ध कराने वाला डिजिटल प्लेटफॉर्म। आवेदन से पहले official notification जरूर देखें।</p></section>
+</main>
+<footer class="footer">© 2026 Rajasthan Digital Help · Privacy Policy · Disclaimer · Contact</footer>
+<script>
+let jobs=[
+{title:"GIMS Noida Staff Nurse Recruitment 2026",category:"Medical",posts:"100",last:"07 Sep 2026",notice:"https://example.com/official-notification",apply:"https://example.com/apply"},
+{title:"SBI Clerk Recruitment 2026",category:"Banking",posts:"1538",last:"27 Aug 2026",notice:"https://example.com/official-notification",apply:"https://example.com/apply"},
+{title:"PNB LBO Recruitment 2026",category:"Banking",posts:"545",last:"16 Aug 2026",notice:"https://example.com/official-notification",apply:"https://example.com/apply"}
+];
+function render(list=jobs){document.getElementById('grid').innerHTML=list.map(j=>`<article class="card"><span class="tag">${j.category}</span><h3>${j.title}</h3><div class="meta">कुल पद: <b>${j.posts}</b><br>अंतिम तिथि: <b>${j.last}</b></div><div class="links"><a href="${j.notice}" target="_blank" rel="noopener">Official Notification</a><a class="apply" href="${j.apply}" target="_blank" rel="noopener">Apply Online</a></div></article>`).join('');document.getElementById('count').textContent=list.length+' Jobs'}
+function searchJobs(){let q=document.getElementById('q').value.toLowerCase();render(jobs.filter(j=>(j.title+j.category).toLowerCase().includes(q)))}
+function addJob(){let j={title:title.value,category:category.value||'Other',posts:posts.value||'—',last:last.value||'—',notice:notice.value||'#',apply:apply.value||'#'};if(!j.title)return alert('Recruitment title डालें');jobs.unshift(j);render();alert('Demo में भर्ती publish हो गई।')}
+render();
+</script>
+</body></html>

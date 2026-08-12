@@ -1,0 +1,30 @@
+{
+  "description": "Backend contract for automatic recruitment ingestion",
+  "endpoints": [
+    {
+      "method": "POST",
+      "path": "/api/admin/jobs",
+      "purpose": "Create/publish verified job"
+    },
+    {
+      "method": "GET",
+      "path": "/api/jobs",
+      "purpose": "Public jobs feed"
+    },
+    {
+      "method": "POST",
+      "path": "/api/sources/fetch",
+      "purpose": "Fetch configured official RSS/API sources"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ai/extract",
+      "purpose": "Extract structured recruitment fields"
+    },
+    {
+      "method": "POST",
+      "path": "/api/jobs/{id}/verify-links",
+      "purpose": "Verify official notification/apply URLs"
+    }
+  ]
+}

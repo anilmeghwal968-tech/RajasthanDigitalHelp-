@@ -1,0 +1,12 @@
+{
+  "name": "rajasthan-digital-help-v2",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "rss-parser": "^3.13.0"
+  }
+}
